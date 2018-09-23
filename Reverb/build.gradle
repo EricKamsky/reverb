@@ -1,9 +1,10 @@
 buildscript {
     repositories {
         maven { url 'http://repo1.maven.org/maven2' }
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.10.+'
+        classpath 'com.android.tools.build:gradle:3.1.4'
     }
 }
 apply plugin: 'android'
@@ -13,17 +14,22 @@ repositories{
 }
 
 dependencies {
-    compile files('libs/android-support-v4.jar')
-    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
-    compile project(':libpulse-android')
+    //compile "com.android.support:support-fragment:27.1.1"
+    //implementation "com.android.support:support-v4:27.1.1"
+    implementation 'com.android.support:support-v4:+'
+    //implementation files('libs/support-v4-27.1.1.jar')
+    //implementation files('libs/support-v4:+.jar')
+    //implementation files('libs/android-support-v4.jar')
+    implementation 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    implementation project(':libpulse-android')
 }
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "19.0.1"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
 
     defaultConfig {
-        minSdkVersion 17
-        targetSdkVersion 17
+        minSdkVersion 25
+        targetSdkVersion 28
     }
 }
